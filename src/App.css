@@ -2,3 +2,7 @@ body{
     font-family:'open Sans condensed';
     padding: 20px 60px;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
