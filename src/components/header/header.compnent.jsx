@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-import {connect} from 'greact-redux';
+import {connect} from 'react-redux';
 
 import { auth } from '../../firebase/firebase.utils';
 
