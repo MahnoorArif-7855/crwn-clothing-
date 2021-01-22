@@ -3,11 +3,11 @@ import React from 'react';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
-import { auth ,createUserProfileDocument } from '../../firebase/firebase.utils'
+import { auth, createUserProfileDocument } from '../../firebase/firebase.utils'
 
 import './sign-up.style.scss';
 
-class SignUp extends React.Component{
+class SignUp extends React.Component {
     constructor(){
         super();
 
@@ -23,35 +23,35 @@ class SignUp extends React.Component{
     handleSubmit= async event => {
         event.preventDefault();
 
-        const {displayName,email,password,confirmPassword} =this.state;
+        const { displayName,email,password,confirmPassword } =this.state;
 
         if(password !== confirmPassword){
             alert("passwords don't match")
             return;
         }
         try{
-            const{ user } =await auth.createUserWithEmailAndPassword(email,password);
+            const { user } = await auth.createUserWithEmailAndPassword(
+                email,
+                password
+                );
 
-            createUserProfileDocument(user,{displayName});
+            await createUserProfileDocument(user, { displayName });
 
-            this.state=({
+            this.setState({
             displayName:'',
             email:'',
             password:'',
-            confirmPassword:''})
-
-
+            confirmPassword:''
+        });
         }catch(error){
-            console.error(error)
-
+            console.error(error);
         }
-
     };
 
-    handleChange =event => {
+    handleChange = event => {
         const { name , value}=event.target;
 
-        this.setState({[name]:value});
+        this.setState({ [name] : value });
     };
 
 
@@ -67,7 +67,7 @@ class SignUp extends React.Component{
                     name='displayName'
                     value={displayName}
                     onChange={this.handleChange}
-                    label='Display'
+                    label='Display Name'
                     required
                     />
                      <FormInput 
@@ -97,11 +97,9 @@ class SignUp extends React.Component{
                     <CustomButton type='submit'>
                         SIGN UP
                         </CustomButton> 
-                    
-
                 </form>
             </div>
-        )
+        );
     }
 }
 

@@ -3,6 +3,6 @@ import 'firebase/firestore';
 
 const firestore = firebase.firestore();
 
-firestore.collection('users').doc('4vHzeW6Ne7rvHH4oCw0F').collection('cartItems').doc('zXXd9Ihke0kyJNuC030E')
-firestore.doc('/users/4vHzeW6Ne7rvHH4oCw0F/cartItems/zXXd9Ihke0kyJNuC030E');
-firestore.collection('/users/4vHzeW6Ne7rvHH4oCw0F/cartItems');
+firestore.collection('users').doc('kmOwGUJI7WQH0oshq2io').collection('cartItems').doc('fbvL5djhEi5zVesyWrV5')
+firestore.doc('/users/kmOwGUJI7WQH0oshq2io/cartItems/fbvL5djhEi5zVesyWrV5');
+firestore.collection('/users/kmOwGUJI7WQH0oshq2io/cartItems');
